@@ -1,4 +1,4 @@
-Excluir clientes con siniestro abierto
+Excluir clientes con siniestro abierto / Exclude clients that have an open claim
 
 SELECT c.CodCliente, c.Nombre, c.Apellido, c.CorreoElectronico, c.Móvil
 FROM DE_Clientes c
@@ -7,8 +7,32 @@ ON c.CodCliente = s.CodCliente AND s.Siniestro = 'SI'
 WHERE s.CodCliente IS NULL;
 
 
+--------------------------------
+[EN] Explanation:
+Join Condition:
+The query performs a LEFT JOIN between the DE_Clientes table (alias c) and the DE_Anulaciones table (alias s) 
+using the common column CodCliente.
 
-Explicación:
+Filter for Open Claims:
+The condition AND s.Siniestro = 'SI' ensures that we only consider customers who have open claims.
+
+Exclusion Condition:
+The WHERE s.CodCliente IS NULL condition filters out customers who have an open claim, 
+as they will not have a corresponding record in the DE_Anulaciones table due to the LEFT JOIN.
+
+Segmented Data Extension:
+The segmented data extension will contain customers with an open claim. 
+Therefore, this data extension must be assigned as the exclusion list during the send process. 
+In this specific case, it represents the customers in the segmented table from this query who have an open claim. The CodCliente column likely serves as the customer ID, and it might need to be identified as the SubscriberKey. Since this is not specified in the task, it is assumed to be the case.
+
+What is an Exclusion List?
+An exclusion list is a list, group, or data extension created within the application 
+and selected during the send process to exclude recipients. 
+If your Email Studio account has the subscriber key enabled, 
+the system will use the value of the subscriber key for exclusion. 
+If the subscriber key is not enabled, the system will use the email address for exclusion.
+
+[ES] Comentario sobre este query:
 Condición de unión: La consulta realiza una UNIÓN IZQUIERDA (LEFT JOIN) 
 entre la tabla DE_Clientes (alias c) y la tabla DE_Anulaciones (alias s) 
 por la columna comun CodCliente.
