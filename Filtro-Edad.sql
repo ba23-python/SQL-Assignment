@@ -10,9 +10,9 @@ WHERE (YEAR(GETDATE()) - YEAR(Año_nacimiento)) BETWEEN 25 AND 40;
 
 ------------------------
 
-[EN] Note: When using GETDATE(), the date settings of the Marketing Cloud server will be respected. In this exercise, it is assumed that all these settings are correctly configured.
-
-The result of this query would be a new query data extension with the following data:
+[EN] Note: When using GETDATE(), the date settings of the Marketing Cloud server will be respected. 
+In this exercise, it is assumed that all these settings are correctly configured. 
+ The result of this query would be a new query data extension with the following data:
 
 Customers aged 25 to 40 years, using the current year to calculate the age based on the customer code, which we assume is the SubscriberKey.
 
