@@ -1,4 +1,4 @@
-![Preview of the PDF][https://github.com/ba23-python/SQL-Assignment/blob/main/Captura%20de%20pantalla%202025-01-26%20231656.png]
+![Preview of the PDF](Captura de pantalla 2025-01-26 231656.png)
 
 [Visualiza en español el proyecto](https://github.com/ba23-python/SQL-Assignment/blob/main/Caso%20de%20uso-SFMC-sector-SEGUROS-Bilyana-Ancheva.pdf)
 
